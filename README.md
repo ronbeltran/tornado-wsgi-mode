@@ -7,5 +7,5 @@ asynchronous methodsprovided by the tornado web framework.
 - [SQLAlchemy][SQLAlchemy]
 
 
-[SQLAlchemy]: (http://www.sqlalchemy.org/)
-[Tornado Web]: (http://www.tornadoweb.org/)
+[SQLAlchemy]: http://www.sqlalchemy.org/
+[Tornado Web]: http://www.tornadoweb.org/
