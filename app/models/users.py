@@ -12,7 +12,6 @@ class User(Base):
     last_name  = Column(String(30), nullable=True)
     email      = Column(String(75), nullable=True)
     password   = Column(String(128), nullable=False)
-    subscribers = relationship('Subscriber', backref='user')
 
     def __repr__(self):
         return "<User('%s')>" % (self.username)
