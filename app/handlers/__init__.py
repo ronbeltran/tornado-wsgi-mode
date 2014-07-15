@@ -1,7 +1,12 @@
 import tornado.web
+from jinja2.exceptions import TemplateNotFound
 
 
 class BaseHandler(tornado.web.RequestHandler):
+    @property
+    def jinja_env(self):
+        return self.application.jinja_env
+
     @property
     def db(self):
         return self.application.db
@@ -11,3 +16,11 @@ class BaseHandler(tornado.web.RequestHandler):
         if not user_id:
             return None
         return self.db.query(User).get(user_id)
+
+    def render(self, tmpl, **kwargs):
+        try:
+            template = self.jinja_env.get_template(tmpl)
+        except TemplateNotFound:
+            raise TemplateNotFound(tmpl)
+        self.jinja_env.globals['static_url'] = self.static_url
+        self.write(template.render(kwargs))
