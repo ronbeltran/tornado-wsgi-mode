@@ -1,6 +1,6 @@
 This is a [Tornado Web][Tornado Web] project template that is configured
 to run as a WSGIApplication. Hence, you cannot use self.flush() or any
-asynchronous methodsprovided by the tornado web framework.
+asynchronous methods provided by the tornado web framework.
 
 ###Integrated Third Party Libraries:
 
